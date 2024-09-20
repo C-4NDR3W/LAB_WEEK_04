@@ -8,13 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentContainerView
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+
+interface CoffeeListener{
+    fun onSelected(id: Int)
+}
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -30,16 +29,19 @@ class MainActivity : AppCompatActivity() {
 //and adding them to the draw
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.listFragment, R.id.favoritesFragment
+                R.id.listFragment, R.id.favoritesFragment, R.id.cafeFragment
             ), findViewById(R.id.drawer_layout)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         findViewById<NavigationView>(R.id.nav_view)
             ?.setupWithNavController(navController)
+// Added this part only
+        findViewById<BottomNavigationView>(R.id.bottom_nav)
+            ?.setupWithNavController(navController)
     }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) ||
-        super.onSupportNavigateUp()
+                super.onSupportNavigateUp()
     }
 }
