@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CafeDetailFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".CafeDetailFragment"
+    android:padding="30dp">
     <TextView
+        android:id="@+id/content_description"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+        android:text="" />
 </FrameLayout>
