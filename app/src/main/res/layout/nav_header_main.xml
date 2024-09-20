@@ -18,5 +18,11 @@
         android:layout_height="100dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="8dp"
-        app:srcCompat="@drawable/baseline_coffee_24" />
+        app:srcCompat="@drawable/coffee_menu" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop= "8dp"
+        android:text="@string/app_title"
+        android:textAppearance= "@style/TextAppearance.AppCompat.Body1" />
 </LinearLayout>
