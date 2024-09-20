@@ -20,4 +20,9 @@ android:id="@+id/coffeeDetail"
 android:name="com.example.lab_week_03.DetailFragment"
 android:label="Detail"
 tools:layout="@layout/fragment_detail" />
-    </navigation>
+    <fragment
+        android:id="@+id/favoritesFragment2"
+        android:name="com.example.lab_week_03.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" />
+</navigation>
